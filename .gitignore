@@ -1,0 +1,7 @@
+node_modules/
+.env
+.DS_Store
+Thumbs.db
+*.log
+data/backups/*.csv
+data/backups/*.tmp
