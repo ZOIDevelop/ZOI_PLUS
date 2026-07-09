@@ -1,0 +1,546 @@
+{
+  "ok": true,
+  "source": "static-github-pages",
+  "products": [
+    {
+      "sku": "ZP-FT-001",
+      "name": "Sistema de Fresado CNC ZOI 1325 Z1",
+      "category": "Fabricación Digital",
+      "tags": [
+        "cnc",
+        "fresado",
+        "industrial",
+        "prototipado"
+      ],
+      "description": "Estación de fresado CNC profesional para producción y prototipado de alta precisión. Área de trabajo 1300 x 2500 mm, husillo de alta potencia y guías industriales para corte, grabado y tallado 2D/3D. Incluye instalación, capacitación y garantía técnica.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/producto-tecnico-01.jpg",
+      "visible": true,
+      "order": 1
+    },
+    {
+      "sku": "ZP-FT-002",
+      "name": "Brazo Robótico Industrial DRX 1850Z",
+      "category": "Robótica",
+      "tags": [
+        "robotica",
+        "industrial",
+        "automatizacion",
+        "software"
+      ],
+      "description": "Sistema robótico multifuncional de seis grados de libertad, carga máxima de 20 kg y alcance de 1850 mm. Diseñado para carga, descarga, ensamblaje, pulido, detección y producción flexible. Incluye software avanzado con licencia perpetua.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/producto-tecnico-02.jpg",
+      "visible": true,
+      "order": 2
+    },
+    {
+      "sku": "ZP-FT-003",
+      "name": "Cámara de Vacío ZOI VZ5G",
+      "category": "Moldes y Resinas",
+      "tags": [
+        "vacio",
+        "resina",
+        "silicona",
+        "laboratorio"
+      ],
+      "description": "Cámara de vacío para desgasificar resinas, siliconas y materiales compuestos. Elimina burbujas de aire para obtener moldes y piezas de alta calidad. Cámara de acero inoxidable y tapa transparente para control del proceso.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/producto-tecnico-03.jpg",
+      "visible": true,
+      "order": 3
+    },
+    {
+      "sku": "ZP-FT-004",
+      "name": "Olla de Presión ZOI PZ5G",
+      "category": "Moldes y Resinas",
+      "tags": [
+        "presion",
+        "resina",
+        "moldes",
+        "prototipado"
+      ],
+      "description": "Olla de presión de 5 galones para fundición y fabricación con resinas. Ayuda a eliminar burbujas y obtener moldes y piezas precisas en prototipado, joyería y fabricación artesanal.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/producto-tecnico-04.jpg",
+      "visible": true,
+      "order": 4
+    },
+    {
+      "sku": "ZP-FT-005",
+      "name": "Compresor de Aire ZOI C1",
+      "category": "Aire y Soporte",
+      "tags": [
+        "compresor",
+        "aire",
+        "taller",
+        "laboratorio"
+      ],
+      "description": "Compresor de aire fijo sin aceite para aplicaciones que requieren aire limpio, operación continua y alta confiabilidad. Caudal de 392 L/min, tanque de 120 litros y motor monofásico de 4 HP a 220 V.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/producto-tecnico-05.jpg",
+      "visible": true,
+      "order": 5
+    },
+    {
+      "sku": "ZP-FT-006",
+      "name": "Sistema Láser CO2 ZOI 1390 P",
+      "category": "Corte y Grabado",
+      "tags": [
+        "laser",
+        "co2",
+        "corte",
+        "grabado"
+      ],
+      "description": "Máquina láser CO2 de 130 W con área de trabajo 1300 x 900 mm para corte y grabado en múltiples materiales. Incluye extractor de humo, bomba de aire, sistema de refrigeración, instalación y capacitación.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/producto-tecnico-06.jpg",
+      "visible": true,
+      "order": 6
+    },
+    {
+      "sku": "ZP-FT-007",
+      "name": "Láser de Diodo UV Creality Falcon2 Pro 22W",
+      "category": "Corte y Grabado",
+      "tags": [
+        "laser",
+        "diodo",
+        "uv",
+        "grabado"
+      ],
+      "description": "Equipo láser de diodo UV para aplicaciones de grabado, corte ligero y fabricación digital. Incluye instalación, capacitación básica y garantía frente a defectos de fabricación.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/producto-tecnico-07.jpg",
+      "visible": true,
+      "order": 7
+    },
+    {
+      "sku": "ZP-FT-008",
+      "name": "Plotter de Corte Silhouette CAMEO PRO MK-II",
+      "category": "Rotulación",
+      "tags": [
+        "plotter",
+        "corte",
+        "vinil",
+        "rotulacion"
+      ],
+      "description": "Máquina de corte de vinil de formato profesional para producción gráfica, rotulación y fabricación digital. Alta velocidad de corte y área amplia para trabajar con tapete o material en rollo.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/producto-tecnico-08.jpg",
+      "visible": true,
+      "order": 8
+    },
+    {
+      "sku": "ZP-FT-009",
+      "name": "Impresora 3D FDM Bambu Lab H2S",
+      "category": "Impresión 3D",
+      "tags": [
+        "impresion3d",
+        "fdm",
+        "multicolor",
+        "prototipado"
+      ],
+      "description": "Sistema de fabricación aditiva por filamento para prototipado rápido, piezas funcionales y aplicaciones educativas. Permite impresión de alta velocidad, control automático y gran precisión dimensional.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/producto-tecnico-09.jpg",
+      "visible": true,
+      "order": 9
+    },
+    {
+      "sku": "ZP-FT-010",
+      "name": "Impresora 3D de Resina Anycubic Photon Mono M7 Max",
+      "category": "Impresión 3D",
+      "tags": [
+        "impresion3d",
+        "resina",
+        "alta precision",
+        "prototipado"
+      ],
+      "description": "Impresora 3D de resina de gran formato para aplicaciones profesionales que requieren alta precisión, gran volumen y estabilidad en producción continua. Ideal para prototipos, diseño industrial y modelos técnicos.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/producto-tecnico-10.jpg",
+      "visible": true,
+      "order": 10
+    },
+    {
+      "sku": "ZP-FT-011",
+      "name": "Escáner 3D Portátil Revopoint POP 3 Plus",
+      "category": "Escaneo 3D",
+      "tags": [
+        "escaner3d",
+        "portatil",
+        "metrologia",
+        "digitalizacion"
+      ],
+      "description": "Escáner 3D portátil de alta precisión para capturar objetos con gran nivel de detalle. Tecnología de luz infrarroja estructurada, precisión hasta 0.05 mm, velocidad de hasta 18 fps y conectividad USB/Wi-Fi.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/producto-tecnico-11.jpg",
+      "visible": true,
+      "order": 11
+    },
+    {
+      "sku": "ZP-FT-012",
+      "name": "Estación de Soldadura YIHUA 948-II 4 en 1",
+      "category": "Electrónica",
+      "tags": [
+        "soldadura",
+        "electronica",
+        "retrabajo",
+        "pcb"
+      ],
+      "description": "Estación profesional de soldadura y retrabajo 4 en 1 para electrónica, mantenimiento de circuitos y reparación de componentes. Integra soldadura, aire caliente, desoldado y succión de humos.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/producto-tecnico-12.jpg",
+      "visible": true,
+      "order": 12
+    },
+    {
+      "sku": "ZP-FT-013",
+      "name": "Osciloscopio Digital Hantek",
+      "category": "Electrónica",
+      "tags": [
+        "osciloscopio",
+        "medicion",
+        "electronica",
+        "laboratorio"
+      ],
+      "description": "Instrumento de medición para visualizar y analizar señales eléctricas en tiempo real. Permite medir voltaje, frecuencia y forma de onda con alta precisión en laboratorios y mantenimiento técnico.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/producto-tecnico-13.jpg",
+      "visible": true,
+      "order": 13
+    },
+    {
+      "sku": "ZP-FT-014",
+      "name": "Fuente de Tensión Regulable DC Bench",
+      "category": "Electrónica",
+      "tags": [
+        "fuente",
+        "dc",
+        "laboratorio",
+        "pruebas"
+      ],
+      "description": "Fuente de alimentación DC regulable de laboratorio con control preciso de voltaje y corriente. Diseñada para pruebas electrónicas, ensayos de laboratorio y alimentación controlada de circuitos.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/producto-tecnico-14.jpg",
+      "visible": true,
+      "order": 14
+    },
+    {
+      "sku": "ZP-FT-015",
+      "name": "Extractor de Humo KINGSOM Solder Fume Extractor",
+      "category": "Seguridad y Ambiente",
+      "tags": [
+        "extractor",
+        "humo",
+        "soldadura",
+        "seguridad"
+      ],
+      "description": "Extractor de humos para soldadura electrónica. Su sistema de filtración captura humo y contaminantes para mejorar la calidad del aire en laboratorios, reparación de equipos y entornos educativos.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/producto-tecnico-15.jpg",
+      "visible": true,
+      "order": 15
+    },
+    {
+      "sku": "ZP-FT-016",
+      "name": "Sistema CNC de Escritorio ZOI CNC 3020ZE",
+      "category": "Fabricación Digital",
+      "tags": [
+        "cnc",
+        "desktop",
+        "pcb",
+        "prototipado"
+      ],
+      "description": "Router CNC de escritorio para grabado, corte y fresado de diversos materiales, incluyendo placas electrónicas. Estructura metálica robusta y control digital para trabajos de precisión.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/producto-tecnico-16.jpg",
+      "visible": true,
+      "order": 16
+    },
+    {
+      "sku": "ZP-FT-017",
+      "name": "Pantalla Interactiva horION 86 pulgadas",
+      "category": "Tecnología Educativa",
+      "tags": [
+        "pantalla",
+        "interactiva",
+        "educacion",
+        "colaboracion"
+      ],
+      "description": "Pantalla interactiva profesional de 86 pulgadas con resolución UHD 4K, tecnología táctil infrarroja, cámara con inteligencia artificial, matriz de micrófonos y funciones de colaboración para espacios educativos y corporativos.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/producto-tecnico-17.jpg",
+      "visible": true,
+      "order": 17
+    },
+    {
+      "sku": "ZP-EQ-001",
+      "name": "Mac Studio M3 Ultra + Studio Display",
+      "category": "Computadores",
+      "tags": [
+        "apple",
+        "mac studio",
+        "m3 ultra",
+        "studio display",
+        "escritorio",
+        "pantalla",
+        "profesional"
+      ],
+      "description": "Estación de trabajo compacta Apple Mac Studio con chip M3 Ultra, CPU de 32 núcleos, GPU de 80 núcleos, memoria unificada de 96 GB, SSD de 2 TB y Studio Display Retina 5K de 27 pulgadas. Incluye instalación, capacitación básica y garantía.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/equipo-producto-01.jpg",
+      "visible": true,
+      "order": 18
+    },
+    {
+      "sku": "ZP-EQ-002",
+      "name": "iPad Pro M4 + Apple Pencil",
+      "category": "Tabletas",
+      "tags": [
+        "apple",
+        "tablet",
+        "diseño",
+        "dibujo"
+      ],
+      "description": "iPad Pro con chip M4, pantalla de 13 pulgadas, 1 TB de almacenamiento, vidrio nanotexturizado, conectividad WiFi y Apple Pencil USB-C para dibujo, notas y creación digital.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/equipo-producto-02.jpg",
+      "visible": true,
+      "order": 19
+    },
+    {
+      "sku": "ZP-EQ-003",
+      "name": "Alienware Area-51 + Monitor Curvo 34 pulgadas",
+      "category": "Computadores",
+      "tags": [
+        "alienware",
+        "escritorio",
+        "gaming",
+        "render"
+      ],
+      "description": "Computador Alienware Area-51 para alto rendimiento en videojuegos, render, diseño y tareas demandantes. Incluye monitor curvo Alienware de 34 pulgadas QD-OLED.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/equipo-producto-03.jpg",
+      "visible": true,
+      "order": 20
+    },
+    {
+      "sku": "ZP-EQ-004",
+      "name": "Alienware X16 R2",
+      "category": "Laptops",
+      "tags": [
+        "alienware",
+        "laptop",
+        "gaming",
+        "diseño"
+      ],
+      "description": "Laptop Alienware X16 R2 con pantalla QHD+ de 16 pulgadas a 240 Hz, Intel Core Ultra 9, 32 GB de RAM, SSD de 1 TB y NVIDIA GeForce RTX 4080.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/equipo-producto-04.jpg",
+      "visible": true,
+      "order": 21
+    },
+    {
+      "sku": "ZP-EQ-005",
+      "name": "Creality K2 Plus Combo",
+      "category": "Impresión 3D",
+      "tags": [
+        "impresora 3d",
+        "creality",
+        "multicolor",
+        "fabricación digital"
+      ],
+      "description": "Impresora 3D Creality K2 Plus Combo de gran capacidad, alta velocidad y flujo multicolor. Incluye rollos de muestra, kit básico de herramientas, instalación y capacitación.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/equipo-producto-05.jpg",
+      "visible": true,
+      "order": 22
+    },
+    {
+      "sku": "ZP-EQ-006",
+      "name": "Apple iMac 24 pulgadas M4",
+      "category": "Computadores",
+      "tags": [
+        "apple",
+        "imac",
+        "escritorio",
+        "diseño"
+      ],
+      "description": "iMac de 24 pulgadas con chip M4, pantalla Retina 4.5K, CPU y GPU de 10 núcleos, hasta 32 GB de memoria unificada y configuración profesional para diseño y creación.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/equipo-producto-06.jpg",
+      "visible": true,
+      "order": 23
+    },
+    {
+      "sku": "ZP-EQ-007",
+      "name": "Wacom One 12",
+      "category": "Tabletas gráficas",
+      "tags": [
+        "wacom",
+        "tableta gráfica",
+        "dibujo",
+        "diseño"
+      ],
+      "description": "Tableta de dibujo Wacom One 12 con pantalla HD de 11.6 pulgadas, lápiz Wacom One Pen, sensibilidad a presión, reconocimiento de inclinación y conexión USB-C.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/equipo-producto-07.jpg",
+      "visible": true,
+      "order": 24
+    },
+    {
+      "sku": "ZP-EQ-008",
+      "name": "Impresora UV DTF UV Locor 30 cm",
+      "category": "Impresión UV DTF",
+      "tags": [
+        "uv dtf",
+        "impresión",
+        "personalización",
+        "locor"
+      ],
+      "description": "Sistema de impresión UV DTF de 30 cm para transferir diseños sobre madera, vidrio, cuero, acrílico, metal y otros materiales planos o curvos.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/equipo-producto-08.jpg",
+      "visible": true,
+      "order": 25
+    },
+    {
+      "sku": "ZP-EQ-009",
+      "name": "Wacom Cintiq M 22",
+      "category": "Tabletas gráficas",
+      "tags": [
+        "wacom",
+        "cintiq",
+        "tableta gráfica",
+        "animación"
+      ],
+      "description": "Tableta Wacom Cintiq M de 21.5 pulgadas con Pro Pen 2, pantalla Full HD, 8192 niveles de presión, baja latencia y flujo natural para ilustración y animación.",
+      "price": 0.0,
+      "stock": 10,
+      "imageUrl": "product-images/equipo-producto-09.jpg",
+      "visible": true,
+      "order": 26
+    }
+  ],
+  "categories": [
+    "Aire y Soporte",
+    "Computadores",
+    "Corte y Grabado",
+    "Electrónica",
+    "Escaneo 3D",
+    "Fabricación Digital",
+    "Impresión 3D",
+    "Impresión UV DTF",
+    "Laptops",
+    "Moldes y Resinas",
+    "Robótica",
+    "Rotulación",
+    "Seguridad y Ambiente",
+    "Tabletas",
+    "Tabletas gráficas",
+    "Tecnología Educativa"
+  ],
+  "tags": [
+    "aire",
+    "alienware",
+    "alta precision",
+    "animación",
+    "apple",
+    "automatizacion",
+    "cintiq",
+    "cnc",
+    "co2",
+    "colaboracion",
+    "compresor",
+    "corte",
+    "creality",
+    "dc",
+    "desktop",
+    "dibujo",
+    "digitalizacion",
+    "diodo",
+    "diseño",
+    "educacion",
+    "electronica",
+    "escaner3d",
+    "escritorio",
+    "extractor",
+    "fabricación digital",
+    "fdm",
+    "fresado",
+    "fuente",
+    "gaming",
+    "grabado",
+    "humo",
+    "imac",
+    "impresion3d",
+    "impresión",
+    "impresora 3d",
+    "industrial",
+    "interactiva",
+    "laboratorio",
+    "laptop",
+    "laser",
+    "locor",
+    "m3 ultra",
+    "mac studio",
+    "medicion",
+    "metrologia",
+    "moldes",
+    "multicolor",
+    "osciloscopio",
+    "pantalla",
+    "pcb",
+    "personalización",
+    "plotter",
+    "portatil",
+    "presion",
+    "profesional",
+    "prototipado",
+    "pruebas",
+    "render",
+    "resina",
+    "retrabajo",
+    "robotica",
+    "rotulacion",
+    "seguridad",
+    "silicona",
+    "software",
+    "soldadura",
+    "studio display",
+    "tablet",
+    "tableta gráfica",
+    "taller",
+    "uv",
+    "uv dtf",
+    "vacio",
+    "vinil",
+    "wacom"
+  ]
+}

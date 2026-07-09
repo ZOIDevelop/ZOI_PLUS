@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ZOI PLUS helps you shop available products or request an automatic quote for anything you need."
+    />
+    <title>ZOI PLUS | Shop or Request an Automatic Quote</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="ZOI PLUS home">
+        <img class="brand-logo" src="brand/zoi-logo-gold-transparent.png" alt="ZOI" />
+        <span>ZOI PLUS</span>
+      </a>
+      <nav class="header-actions" aria-label="Primary">
+        <a href="#shop" data-i18n="navShop">Shop</a>
+        <a href="#quote" data-i18n="navQuote">Quote</a>
+        <a class="cart-link" href="#cart" aria-label="Open cart">
+          <span class="cart-icon" aria-hidden="true">Cart</span>
+          <span data-i18n="cartTitle">Cart</span>
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+        <div class="auth-slot">
+          <div id="googleSignInButton"></div>
+          <button class="auth-fallback" type="button" id="googleDevSignIn" hidden data-i18n="signInGoogle">
+            Sign in with Google
+          </button>
+          <div class="user-menu" id="userMenu" hidden>
+            <span class="user-avatar" id="userAvatar">G</span>
+            <span class="user-name" id="userName">Google</span>
+            <button class="sign-out" type="button" id="signOutButton" data-i18n="signOut">Sign out</button>
+          </div>
+        </div>
+        <button class="language-toggle" type="button" id="languageToggle" aria-label="Change language">ES</button>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="eyebrow" data-i18n="eyebrow">Sourcing, commerce and custom creation</p>
+          <h1 id="hero-title" data-i18n="headline">If it exists, we source it. If it doesn't, we create it.</h1>
+          <p class="hero-copy" data-i18n="heroCopy">
+            Buy ready-to-ship products or request an automatic quote for anything your project needs.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#shop" data-i18n="shopNow">Shop now</a>
+            <a class="button secondary" href="#quote" data-i18n="requestQuote">Request an automatic quote</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="shop-section" id="shop" aria-labelledby="shop-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow" data-i18n="catalogEyebrow">Available inventory</p>
+            <h2 id="shop-title" data-i18n="catalogTitle">Shop products</h2>
+          </div>
+          <p data-i18n="catalogCopy">Search by name, category or tags. Every product photo stays square.</p>
+        </div>
+
+        <div class="catalog-tools" role="search">
+          <input id="searchInput" type="search" autocomplete="off" data-i18n-placeholder="searchPlaceholder" />
+          <select id="categoryFilter" aria-label="Category filter"></select>
+          <select id="tagFilter" aria-label="Tag filter"></select>
+        </div>
+
+        <div class="status-line" id="catalogStatus" role="status"></div>
+        <div class="product-grid" id="productGrid"></div>
+        <div class="catalog-more">
+          <button class="button secondary catalog-toggle" type="button" id="catalogToggle" data-i18n="viewAllProducts">
+            View all products
+          </button>
+        </div>
+        <div class="empty-state" id="emptyState" hidden>
+          <h3 data-i18n="emptyTitle">Can't find it?</h3>
+          <p data-i18n="emptyCopy">Send us a brief and we'll source it or create it for you.</p>
+          <a class="button primary" href="#quote" data-i18n="requestQuote">Request an automatic quote</a>
+        </div>
+      </section>
+
+      <section class="commerce-section" aria-label="Cart and automatic quote">
+        <aside class="cart-panel" id="cart" aria-labelledby="cart-title">
+          <div class="panel-heading">
+            <h2 id="cart-title" data-i18n="cartTitle">Cart</h2>
+            <button class="text-button" type="button" id="clearCart" data-i18n="clearCart">Clear</button>
+          </div>
+          <div class="cart-items" id="cartItems"></div>
+          <div class="cart-total">
+            <span data-i18n="subtotal">Subtotal</span>
+            <strong id="cartSubtotal">$0.00</strong>
+          </div>
+          <form class="checkout-form" id="orderForm">
+            <label>
+              <span data-i18n="name">Name</span>
+              <input name="nombre" required autocomplete="name" />
+            </label>
+            <label>
+              <span data-i18n="whatsapp">WhatsApp</span>
+              <input name="whatsapp" required autocomplete="tel" />
+            </label>
+            <label>
+              <span data-i18n="emailOptional">Email optional</span>
+              <input name="email" type="email" autocomplete="email" />
+            </label>
+            <label>
+              <span data-i18n="city">City</span>
+              <input name="ciudad" required autocomplete="address-level2" />
+            </label>
+            <label>
+              <span data-i18n="delivery">Address or pickup</span>
+              <input name="direccion_o_retiro" required autocomplete="street-address" />
+            </label>
+            <label>
+              <span data-i18n="notes">Notes</span>
+              <textarea name="notas" rows="3"></textarea>
+            </label>
+            <button class="button primary full" type="submit" data-i18n="sendOrder">Proceed to payment</button>
+            <p class="form-message" id="orderMessage" role="status"></p>
+            <button
+              class="payment-link"
+              id="paymentLink"
+              type="button"
+              data-payment-url="https://ppls.me/Kj3CzlQnQ8681G80s2EVA"
+              data-i18n="openPayment"
+            >
+              Open secure payment
+            </button>
+            <button class="paypal-button" id="paypalButton" type="button" data-i18n="payWithPaypal">
+              Pay with PayPal
+            </button>
+          </form>
+        </aside>
+
+        <section class="quote-panel" id="quote" aria-labelledby="quote-title">
+          <p class="eyebrow" data-i18n="quoteEyebrow">Automatic quote</p>
+          <h2 id="quote-title" data-i18n="quoteTitle">Request anything</h2>
+          <p data-i18n="quoteCopy">
+            Tell us what you need. We'll register the lead, estimate when possible, and confirm before final pricing.
+          </p>
+          <div class="quote-list" id="quoteList"></div>
+          <form class="quote-form" id="quoteForm">
+            <div class="custom-quote-builder">
+              <div class="quote-list-heading">
+                <strong data-i18n="customItemsTitle">Items outside the catalog</strong>
+              </div>
+              <label>
+                <span data-i18n="wantedProduct">Product needed</span>
+                <input name="producto_buscado" />
+              </label>
+              <label>
+                <span data-i18n="description">Description</span>
+                <textarea name="descripcion" rows="4"></textarea>
+              </label>
+              <div class="form-row">
+                <label>
+                  <span data-i18n="quantity">Quantity</span>
+                  <input name="cantidad" type="number" min="1" />
+                </label>
+                <label>
+                  <span data-i18n="budget">Estimated budget</span>
+                  <input name="presupuesto_estimado" />
+                </label>
+              </div>
+              <label>
+                <span data-i18n="referencePhotos">Reference photos</span>
+                <input name="fotos_referencia" type="file" accept="image/*" multiple />
+              </label>
+              <label>
+                <span data-i18n="referenceLinks">Reference links</span>
+                <textarea name="links_referencia" rows="3"></textarea>
+              </label>
+              <button class="button secondary compact" id="addCustomQuoteItem" type="button" data-i18n="addCustomItem">
+                Add item
+              </button>
+              <div class="custom-quote-list" id="customQuoteList"></div>
+            </div>
+            <div class="form-row">
+              <label>
+                <span data-i18n="deadline">Deadline</span>
+                <input name="fecha_limite" type="date" />
+              </label>
+              <label>
+                <span data-i18n="countryCity">Country / city</span>
+                <input name="pais_ciudad" required />
+              </label>
+            </div>
+            <div class="form-row">
+              <label>
+                <span data-i18n="name">Name</span>
+                <input name="nombre" required autocomplete="name" />
+              </label>
+              <label>
+                <span data-i18n="whatsapp">WhatsApp</span>
+                <input name="whatsapp" required autocomplete="tel" />
+              </label>
+            </div>
+            <label>
+              <span>Email</span>
+              <input name="email" type="email" required autocomplete="email" />
+            </label>
+            <label>
+              <span data-i18n="notes">Notes</span>
+              <textarea name="notas" rows="3"></textarea>
+            </label>
+            <button class="button primary full" type="submit" data-i18n="sendQuote">Request automatic estimate</button>
+            <p class="form-message" id="quoteMessage" role="status"></p>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <strong>ZOI PLUS</strong>
+      <span data-i18n="footerText">Shop it, source it, or create it.</span>
+    </footer>
+
+    <div class="payment-modal" id="paymentModal" hidden>
+      <div class="payment-modal-backdrop" data-close-payment></div>
+      <section class="payment-dialog" role="dialog" aria-modal="true" aria-labelledby="payment-title">
+        <header class="payment-dialog-header">
+          <div>
+            <p class="eyebrow" id="paymentEyebrow">Secure card payment</p>
+            <h2 id="payment-title">Complete your payment</h2>
+          </div>
+          <button class="modal-close" type="button" data-close-payment aria-label="Close payment">x</button>
+        </header>
+        <div class="payment-inside">
+          <strong id="paymentReadyTitle">Card payment is configured</strong>
+          <p id="paymentReadyCopy">
+            This payment provider does not allow its checkout to load inside this page. To keep the full card form inside ZOI PLUS, we need an embeddable checkout or API keys from the payment provider.
+          </p>
+          <p class="payment-url-label" id="paymentCurrentLink">Current card payment link</p>
+          <code id="paymentUrlText">https://ppls.me/Kj3CzlQnQ8681G80s2EVA</code>
+          <button class="paypal-button modal-paypal" id="paypalModalButton" type="button"></button>
+        </div>
+        <p class="payment-note" id="paymentNote">
+          This keeps the checkout experience inside ZOI PLUS without showing a broken payment frame.
+        </p>
+      </section>
+    </div>
+
+    <template id="productCardTemplate">
+      <article class="product-card">
+        <div class="image-frame">
+          <img alt="" loading="lazy" />
+          <div class="image-fallback">ZOI PLUS</div>
+        </div>
+        <div class="product-content">
+          <div class="product-meta">
+            <span class="category"></span>
+            <span class="stock"></span>
+          </div>
+          <h3></h3>
+          <p class="description"></p>
+          <button class="description-toggle" type="button" data-i18n="readMore">Read more</button>
+          <div class="tag-list"></div>
+          <div class="product-footer">
+            <strong class="price"></strong>
+            <div class="product-actions">
+              <button class="technical-sheet-button" type="button" hidden data-i18n="technicalSheet">Technical sheet</button>
+              <button class="button small" type="button" data-i18n="addToCart">Add</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js?v=github-static-1" type="module"></script>
+  </body>
+</html>
