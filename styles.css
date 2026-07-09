@@ -101,6 +101,12 @@ a {
   color: #f4e7c8;
 }
 
+.cart-link[hidden],
+.auth-slot[hidden],
+.cart-panel[hidden] {
+  display: none !important;
+}
+
 .cart-icon {
   font-size: 1rem;
   line-height: 1;
@@ -695,6 +701,16 @@ label {
   gap: 24px;
   grid-template-columns: minmax(320px, 0.85fr) minmax(0, 1.15fr);
   padding-top: 0;
+}
+
+body.quote-only-mode .commerce-section {
+  grid-template-columns: 1fr;
+}
+
+body.quote-only-mode .quote-panel {
+  margin: 0 auto;
+  max-width: 980px;
+  width: 100%;
 }
 
 .cart-panel,

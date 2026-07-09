@@ -205,6 +205,10 @@ const elements = {
   catalogToggle: document.querySelector("#catalogToggle"),
   emptyState: document.querySelector("#emptyState"),
   productCardTemplate: document.querySelector("#productCardTemplate"),
+  commerceSection: document.querySelector(".commerce-section"),
+  cartLink: document.querySelector(".cart-link"),
+  cartPanel: document.querySelector("#cart"),
+  authSlot: document.querySelector(".auth-slot"),
   cartCount: document.querySelector("#cartCount"),
   cartItems: document.querySelector("#cartItems"),
   cartSubtotal: document.querySelector("#cartSubtotal"),
@@ -407,6 +411,7 @@ function signOutUser() {
 }
 
 function renderAuth() {
+  if (STATIC_MODE && elements.authSlot?.hidden) return;
   const isSignedIn = Boolean(state.user);
   elements.userMenu.hidden = !isSignedIn;
   elements.googleSignInButton.hidden = isSignedIn || !state.config.googleClientId;
@@ -433,6 +438,7 @@ async function loadProducts() {
     state.products = data.products || [];
     state.categories = data.categories || [];
     state.tags = data.tags || [];
+    applyStaticModeControls();
     renderFilters();
     renderProducts();
     renderCart();
@@ -444,6 +450,19 @@ async function loadProducts() {
 function renderFilters() {
   fillSelect(elements.categoryFilter, t("allCategories"), state.categories);
   fillSelect(elements.tagFilter, t("allTags"), state.tags);
+}
+
+function applyStaticModeControls() {
+  if (!STATIC_MODE) return;
+  const hasPurchasableProducts = state.products.some((product) => product.price > 0);
+  document.body.classList.toggle("quote-only-mode", !hasPurchasableProducts);
+  if (elements.cartLink) elements.cartLink.hidden = !hasPurchasableProducts;
+  if (elements.cartPanel) elements.cartPanel.hidden = !hasPurchasableProducts;
+  if (elements.authSlot) elements.authSlot.hidden = true;
+  if (!hasPurchasableProducts) {
+    state.cart = [];
+    saveCart();
+  }
 }
 
 function fillSelect(select, label, values) {
