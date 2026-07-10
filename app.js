@@ -83,6 +83,7 @@ const translations = {
     referencePhotos: "Reference photos",
     referenceLinks: "Reference links",
     sendQuote: "Request automatic estimate",
+    downloadBackupCsv: "Download request backup CSV",
     quoteSuccess: "Request received. Automatic estimate pending confirmation.",
     quoteError: "We could not send the quote request. Please try again.",
     footerText: "Shop it, source it, or create it."
@@ -171,6 +172,7 @@ const translations = {
     referencePhotos: "Fotos de referencia",
     referenceLinks: "Links de referencia",
     sendQuote: "Solicitar estimación automática",
+    downloadBackupCsv: "Descargar respaldo CSV",
     quoteSuccess: "Solicitud recibida. Estimación automática pendiente de confirmación.",
     quoteError: "No pudimos enviar la cotización. Inténtalo de nuevo.",
     footerText: "Cómpralo, consíguelo o créalo."
@@ -236,7 +238,8 @@ const elements = {
   customQuoteList: document.querySelector("#customQuoteList"),
   addCustomQuoteItem: document.querySelector("#addCustomQuoteItem"),
   quoteForm: document.querySelector("#quoteForm"),
-  quoteMessage: document.querySelector("#quoteMessage")
+  quoteMessage: document.querySelector("#quoteMessage"),
+  downloadStaticBackup: document.querySelector("#downloadStaticBackup")
 };
 
 applyTranslations();
@@ -285,6 +288,7 @@ function applyTranslations() {
   renderQuoteList();
   renderCustomQuoteList();
   renderAuth();
+  updateStaticBackupButton();
 }
 
 function bindEvents() {
@@ -319,6 +323,7 @@ function bindEvents() {
   elements.orderForm.addEventListener("submit", handleOrderSubmit);
   elements.addCustomQuoteItem.addEventListener("click", addCustomQuoteItemFromForm);
   elements.quoteForm.addEventListener("submit", handleQuoteSubmit);
+  elements.downloadStaticBackup.addEventListener("click", downloadStaticBackupCsv);
   elements.paymentLink.addEventListener("click", openPaymentModal);
   elements.paypalButton.addEventListener("click", openPaypalModal);
   elements.paypalModalButton.addEventListener("click", openPaypalCheckout);
@@ -1101,6 +1106,7 @@ function saveStaticSubmission(type, payload) {
     payload
   });
   localStorage.setItem("zoi-static-submissions", JSON.stringify(records));
+  updateStaticBackupButton();
 }
 
 function loadStaticSubmissions() {
@@ -1109,6 +1115,67 @@ function loadStaticSubmissions() {
   } catch {
     return [];
   }
+}
+
+function updateStaticBackupButton() {
+  if (!elements.downloadStaticBackup) return;
+  const records = loadStaticSubmissions().filter((record) => Date.parse(record.expires_at) > Date.now());
+  elements.downloadStaticBackup.hidden = !STATIC_MODE || records.length === 0;
+}
+
+function downloadStaticBackupCsv() {
+  const records = loadStaticSubmissions().filter((record) => Date.parse(record.expires_at) > Date.now());
+  if (!records.length) {
+    updateStaticBackupButton();
+    return;
+  }
+
+  const headers = [
+    "id",
+    "type",
+    "created_at",
+    "expires_at",
+    "customer_name",
+    "whatsapp",
+    "email",
+    "city",
+    "item_count",
+    "subtotal",
+    "payload_json"
+  ];
+  const rows = records.map((record) => {
+    const payload = record.payload || {};
+    const customer = record.type === "order" ? payload.customer || {} : payload.quote || {};
+    const items = Array.isArray(payload.items) ? payload.items : [];
+    return {
+      id: record.id,
+      type: record.type,
+      created_at: record.created_at,
+      expires_at: record.expires_at,
+      customer_name: customer.nombre || customer.name || "",
+      whatsapp: customer.whatsapp || "",
+      email: customer.email || "",
+      city: customer.ciudad || customer.city || customer.pais_ciudad || "",
+      item_count: items.reduce((total, item) => total + (Number(item.quantity) || 1), 0),
+      subtotal: payload.totals?.subtotal || "",
+      payload_json: JSON.stringify(payload)
+    };
+  });
+  const csv = [headers.join(","), ...rows.map((row) => headers.map((header) => csvCell(row[header])).join(","))].join("\n");
+  const blob = new Blob([`\ufeff${csv}\n`], { type: "text/csv;charset=utf-8" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = `zoi-plus-solicitudes-${new Date().toISOString().slice(0, 10)}.csv`;
+  document.body.append(link);
+  link.click();
+  URL.revokeObjectURL(link.href);
+  link.remove();
+}
+
+function csvCell(value) {
+  const text = String(value ?? "");
+  if (!/[",\n\r]/.test(text)) return text;
+  return `"${text.replaceAll("\"", "\"\"")}"`;
 }
 
 function loadQuoteItems() {

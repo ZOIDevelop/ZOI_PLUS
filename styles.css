@@ -843,6 +843,14 @@ body.quote-only-mode .quote-panel {
   color: var(--rose);
 }
 
+.backup-download {
+  justify-self: start;
+}
+
+.backup-download[hidden] {
+  display: none;
+}
+
 .site-footer {
   align-items: center;
   border-top: 1px solid var(--line);
